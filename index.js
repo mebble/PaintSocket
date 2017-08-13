@@ -10,4 +10,8 @@ console.log('My server is running');
 var io = socket(server);
 io.sockets.on('connection', function(socket) {
 	console.log('New connection: ' + socket.id);
+
+	socket.on('mouse', function(data) {
+		console.log(data);
+	});
 });
