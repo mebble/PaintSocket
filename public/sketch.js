@@ -9,7 +9,9 @@ function setup() {
 	socket.on('mouse', newDrawing);  //receive msg from server
 	client = {
 		size: 30,
-		color: `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`
+		color: `rgb(${floor(random(255))}, 
+					${floor(random(255))}, 
+					${floor(random(255))})`
 	};
 }
 
