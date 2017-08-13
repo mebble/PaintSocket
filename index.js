@@ -13,5 +13,7 @@ io.sockets.on('connection', function(socket) {
 
 	socket.on('mouse', function(data) {
 		console.log(data);
+		this.broadcast.emit('mouse', data);
+		//io.sockets.emit('mouse', data); //broadcast to every socket including self
 	});
 });
