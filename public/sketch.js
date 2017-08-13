@@ -12,8 +12,14 @@ function draw() {
 }
 
 function mouseDragged() {
-	console.log(mouseX, mouseY);
 	noStroke();
 	fill('#fff');
 	ellipse(mouseX, mouseY, 40, 40);
+
+	var data = {
+		x: mouseX,
+		y: mouseY
+	};
+	socket.emit('mouse', data);
+	console.log('Sending:', mouseX, mouseY);
 }
